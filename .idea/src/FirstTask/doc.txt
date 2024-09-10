@@ -1,4 +1,0 @@
- Koristeći predložak Strategy potrebno je realizirati aplikaciju jednostavnog kalkulatora
- koji, za početak, podržava samo četiri osnovne operacije (+, -, * i /).
- Ne zaboravite da kalkulator ima i metodu display kojom prikazuje rezultate navedenih operacija.
- U glavnom dijelu programa treba osigurati da ovisno o korisničkom izboru klijent može dinamički izabrati potrebnu strategiju.
