@@ -15,18 +15,26 @@ public class App {
 
         switch (choice) {
             case 1:
-                cart.setPayment(new CardPayment());
+                cart.setPaymentStrategy(new CreditCardPaymentStrategy());
                 break;
             case 2:
-                cart.setPayment(new CashPayment());
+                cart.setPaymentStrategy(new CashOnDeliveryPaymentStrategy());
                 break;
             case 3:
-                cart.setPayment(new PaypalPayment());
+                cart.setPaymentStrategy(new PayPalPaymentStrategy());
                 break;
             case 4:
-                cart.setPayment(new BitcoingPayment());
+                cart.setPaymentStrategy(new BitcoinPaymentStrategy());
                 break;
             default:
-                System.out.println("Nepoznata opcija!");
-                break;
+                System.out.println("Neispravan izbor!");
+                scanner.close();
+                return;
         }
+
+        // Izvršavanje plaćanja
+        cart.pay(amount);
+
+        scanner.close();
+    }
+}

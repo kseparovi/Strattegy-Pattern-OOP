@@ -1,22 +1,18 @@
 package SecondTask;
 
 public class ShoppingCart {
-    private Payment paymentStrategy;
+    private PaymentStrategy paymentStrategy;
 
     // Metoda za postavljanje strategije plaćanja
-    public void setPaymentStrategy(Payment paymentStrategy) {
+    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
         this.paymentStrategy = paymentStrategy;
     }
 
     // Metoda za plaćanje
-    public void pay(float amount) {
+    public void pay(double amount) {
         if (paymentStrategy == null) {
             throw new IllegalStateException("Strategija plaćanja nije postavljena!");
         }
-        paymentStrategy.pay((float) amount);
-    }
-
-    public void setPayment(CardPayment cardPayment) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        paymentStrategy.pay(amount);
     }
 }
